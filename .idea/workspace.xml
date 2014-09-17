@@ -4,7 +4,7 @@
     <list default="true" id="19bc3930-68fb-4feb-9839-965d30c81097" name="Default" comment="" />
     <ignored path="app_Rails_Admin.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Gemfile" changelist="19bc3930-68fb-4feb-9839-965d30c81097" time="1410963161156" ignored="false" />
+    <file path="/Gemfile" changelist="19bc3930-68fb-4feb-9839-965d30c81097" time="1410964276118" ignored="false" />
     <file path="/routes.rb" changelist="19bc3930-68fb-4feb-9839-965d30c81097" time="1410963869478" ignored="false" />
     <file path="/application.html.erb" changelist="19bc3930-68fb-4feb-9839-965d30c81097" time="1410964052356" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,19 +23,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="48" selection-start="923" selection-end="923" vertical-scroll-proportion="0.0">
+            <state line="3" column="14" selection-start="58" selection-end="58" vertical-scroll-proportion="0.04171123">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="2" selection-start="77" selection-end="77" vertical-scroll-proportion="0.08342246">
+            <state line="6" column="2" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -69,10 +69,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/controllers/posts_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -471,13 +471,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="48" selection-start="923" selection-end="923" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/posts_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="35" selection-start="81" selection-end="81" vertical-scroll-proportion="0.0">
@@ -494,7 +487,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="2" selection-start="77" selection-end="77" vertical-scroll-proportion="0.08342246">
+        <state line="6" column="2" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="14" selection-start="58" selection-end="58" vertical-scroll-proportion="0.04171123">
           <folding />
         </state>
       </provider>
