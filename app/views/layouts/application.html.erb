@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
   <title>AppRailsAdmin</title>
@@ -7,12 +6,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if signed_in? %>
+    <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
+    <%= link_to "Edit Account Info", edit_user_registration_path %>
 
-<%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
-
-<%= link_to "Sign in", new_user_session_path %>
-
+<% else %>
+    <%= link_to "Sign in", new_user_session_path %>
+<% end %>
 <%= yield %>
+
+
 
 </body>
 </html>
