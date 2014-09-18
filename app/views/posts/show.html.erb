@@ -16,7 +16,9 @@
 </p>
 
 
-<%= image_tag @post.avatar.url %>
+<div><%= image_tag @post.avatar.url(:medium) %></div><br>
+<div><%= image_tag @post.avatar1.url(:medium) %></div><br>
+<div><%= image_tag @post.avatar2.url(:medium) %></div><br>
 
 
 

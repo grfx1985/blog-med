@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140917143551) do
+ActiveRecord::Schema.define(version: 20140918082202) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20140917143551) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "avatar1_file_name"
+    t.string   "avatar1_content_type"
+    t.integer  "avatar1_file_size"
+    t.datetime "avatar1_updated_at"
+    t.string   "avatar2_file_name"
+    t.string   "avatar2_content_type"
+    t.integer  "avatar2_file_size"
+    t.datetime "avatar2_updated_at"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
