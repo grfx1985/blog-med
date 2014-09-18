@@ -1,0 +1,8 @@
+<% if signed_in? %>
+    <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
+    <%= link_to "Edit Account Info", edit_user_registration_path %>
+
+<% else %>
+    <%= link_to "Sign in", new_user_session_path %><
+<% end %>
+<%= yield %>

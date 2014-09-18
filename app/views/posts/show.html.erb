@@ -16,11 +16,13 @@
 </p>
 
 
-<div><%= image_tag @post.avatar.url(:medium) %></div><br>
-<div><%= image_tag @post.avatar1.url(:medium) %></div><br>
-<div><%= image_tag @post.avatar2.url(:medium) %></div><br>
+<div><%= link_to image_tag(@post.avatar.url(:medium)), @post.avatar.url  %></div><br>
+<div><%= link_to image_tag(@post.avatar1.url(:medium)), @post.avatar1.url  %></div><br>
+<div><%= link_to image_tag(@post.avatar2.url(:medium)), @post.avatar2.url  %></div><br>
 
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+
+
