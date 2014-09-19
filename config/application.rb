@@ -11,6 +11,23 @@ module AppRailsAdmin
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+        :address  => "mail.activeweb.pl",
+        :port  => 25,
+        :domain  => "activeweb.pl",
+        :user_name  => "automail@activeweb.pl",
+        :password  => 'qwe135',
+        :authentication  => :login,
+        :tls => false,
+        :ssl => false,
+        :enable_starttls_auto => false,
+        :openssl_verify_mode  => 'none'
+    }
+    ActionMailer::Base.smtp_settings[:openssl_verify_mode] = false
+    ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false
+
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
