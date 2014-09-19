@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 gem 'devise'
 gem 'paperclip'
-
+gem 'will_paginate'
+gem 'rails_admin'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'

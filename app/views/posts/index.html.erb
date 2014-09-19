@@ -15,7 +15,7 @@
       <tr>
         <td><%= post.title %></td>
         <td><%= post.description %></td>
-        <td><%= post.user %></td>
+        <td><%= post.user.email %></td>
         <td><%= link_to 'Show', post %></td>
         <% if is_my_post?(post) %>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
@@ -29,3 +29,4 @@
 <br>
 
 <%= link_to 'New Post', new_post_path %>
+<%= will_paginate @posts %>
