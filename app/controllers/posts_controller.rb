@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     @posts = Post.all.paginate(:page => params[:page], :per_page => 10)
      respond_to do |format|
       format.html
-      format.csv { send_data @posts.to_csv }
+      format.csv { send_data Post.all.to_csv }
       format.xls 
     end
   end

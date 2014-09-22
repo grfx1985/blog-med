@@ -10,6 +10,7 @@ class Post < ActiveRecord::Base
   validates_attachment_content_type :avatar2, :content_type => /\Aimage\/.*\Z/
   has_many :comments, dependent: :destroy
   accepts_nested_attributes_for :comments
+
 def self.import(file)
   CSV.foreach(file.path, headers: true) do |row|
     post = find_or_initialize_by(id: row["id"])
@@ -18,22 +19,21 @@ def self.import(file)
   end
 end
 
- 
-end
+
   
   
   def self.to_csv
-    CSV.generate do |csv|
+      CSV.generate do |csv|
       csv << column_names
-      all.each do |product|
-        csv << product.attributes.values_at(*column_names)
+      all.each do |post|
+        csv << post.attributes.values_at(*column_names)
       end
     end
   end
 
 
 def self.import(file)
-   spreadsheet = open_spreadsheet(file)
+  spreadsheet = open_spreadsheet(file)
   header = spreadsheet.row(1)
   (2..spreadsheet.last_row).each do |i|
     row = Hash[[header, spreadsheet.row(i)].transpose]
@@ -52,6 +52,7 @@ def self.open_spreadsheet(file)
   when '.xlsx' then Excelx.new(file.path, nil, :ignore)
   else raise "Unknown file type: #{file.original_filename}"
   end
+end
 end
 
 

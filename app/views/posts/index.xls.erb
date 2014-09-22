@@ -10,13 +10,15 @@
         <Cell><Data ss:Type="String">Title</Data></Cell>
         <Cell><Data ss:Type="String">Description</Data></Cell>
         <Cell><Data ss:Type="String">Email</Data></Cell>
-      </Row>
+        <Cell><Data ss:Type="String">User_id</Data></Cell>
+        </Row>
     <% @posts.each do |post| %>
       <Row>
-        <Cell><Data ss:Type="Number"><%= post.title %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= post.title %></Data></Cell>
         <Cell><Data ss:Type="String"><%= post.description %></Data></Cell>
         <Cell><Data ss:Type="String"><%= post.user.email %></Data></Cell>
-      </Row>
+        <Cell><Data ss:Type="String"><%= post.user_id %></Data></Cell>
+        </Row>
     <% end %>
     </Table>
   </Worksheet>
