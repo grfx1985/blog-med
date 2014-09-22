@@ -14,16 +14,24 @@
   <strong>User:</strong>
   <%= @post.user.email %>
 </p>
+<p>
 
 
 <div><%= link_to image_tag(@post.avatar.url(:medium)), @post.avatar.url  %></div><br>
 <div><%= link_to image_tag(@post.avatar1.url(:medium)), @post.avatar1.url  %></div><br>
 <div><%= link_to image_tag(@post.avatar2.url(:medium)), @post.avatar2.url  %></div><br>
 
-<% if is_my_post?(@post) %>
+<strong>Comments:</strong>
+  <% @post.comments.each do |comment| %>
+    <%= comment.content %> (<%= comment.title %>)
+    <hr>
+	<% if is_my_post?(@post) %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<% end %>
-<%= link_to 'Back', posts_path %>
+	<%= link_to 'Edit', edit_post_path(@post) %> |
+	<% end %>
+	<%= link_to 'Back', posts_path %>
 
-
+  <% end %>
+  <hr>
+  <strong>Add new:</strong>
+  <%= render partial: 'comments/form', locals: {comment: Comment.new(post_id: @post.id)} %>

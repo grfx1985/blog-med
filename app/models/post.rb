@@ -2,14 +2,14 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-
+  
   has_attached_file :avatar1, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :avatar1, :content_type => /\Aimage\/.*\Z/
 
   has_attached_file :avatar2, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :avatar2, :content_type => /\Aimage\/.*\Z/
-
-
+  has_many :comments, dependent: :destroy
+  accepts_nested_attributes_for :comments
 def self.import(file)
   CSV.foreach(file.path, headers: true) do |row|
     post = find_or_initialize_by(id: row["id"])
@@ -18,7 +18,7 @@ def self.import(file)
   end
 end
 
-
+ 
 end
   
   
