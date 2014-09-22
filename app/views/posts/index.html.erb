@@ -11,6 +11,16 @@
   </thead>
 
   <tbody>
+  <p>
+  Download:
+  <%= link_to "CSV", posts_path(format: "csv") %> |
+  <%= link_to "Excel", posts_path(format: "xls") %>
+</p>
+  <h2>Import Blog Posts</h2>
+<%= form_tag import_posts_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>

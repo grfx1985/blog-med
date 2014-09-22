@@ -6,6 +6,11 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all.paginate(:page => params[:page], :per_page => 10)
+     respond_to do |format|
+      format.html
+      format.csv { send_data @posts.to_csv }
+      format.xls 
+    end
   end
 
   # GET /posts/1
@@ -62,14 +67,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def import
+    Post.import(params[:file])
+    redirect_to root_url, notice: "Products imported."
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
     end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description, :user_id, :avatar, :avatar1, :avatar2)
+      params.require(:post).permit(:title, :description, :user_id, :avatar, :avatar1, :avatar2, :file)
     end
 end

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-
-  resources :posts
+resources :posts do
+    collection { post :import }
+  end
+  mount RailsAdmin::Engine => '/user/god', as: 'rails_admin'
 
   devise_for :users
  
