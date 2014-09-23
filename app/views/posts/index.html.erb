@@ -3,8 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>| Title |      </th>
-      <th>| Description |       </th>
+      <th>| Title |  </th>
+      <th>| Description | </th>
       <th>| User |</th>
       <th colspan="3"></th>
     </tr>
@@ -13,8 +13,8 @@
   <tbody>
   <p>
   <b>Download:</b>
-  |<%= link_to "CSV", posts_path(format: "csv") %> |
-  |<%= link_to "Excel", posts_path(format: "xls") %>|
+  | <%= link_to "CSV", posts_path(format: "csv") %> |
+  | <%= link_to "Excel", posts_path(format: "xls") %> |
 </p>
   <h5>Import Blog Posts</h5>
 <%= form_tag import_posts_path, multipart: true do %>
@@ -24,12 +24,12 @@
     <% @posts.each do |post| %>
       <tr>
         <td>| <%= post.title %> |</td>
-        <td> |<%= post.description %> |</td>
-        <td> |<%= post.user.email %> |</td>
-        <td>|<%= link_to 'Show', post %>|</td>
+        <td> | <%= post.description %> |</td>
+        <td> | <%= post.user.email %> |</td>
+        <td>| <%= link_to 'Show', post %> |</td>
         <% if is_my_post?(post) %>
-        <td>|<%= link_to 'Edit', edit_post_path(post) %>|</td>
-        <td>|<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>|</td>
+        <td>| <%= link_to 'Edit', edit_post_path(post) %>|</td>
+        <td>| <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %> |</td>
         <% end %>
       </tr>
     <% end %>
@@ -38,5 +38,5 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+| <%= link_to 'New Post', new_post_path %> |
 <%= will_paginate @posts %>
