@@ -1,35 +1,35 @@
-<h1>Listing posts</h1>
+<h3>Listing posts</h3>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>User</th>
+      <th>| Title |      </th>
+      <th>| Description |       </th>
+      <th>| User |</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
   <p>
-  Download:
-  <%= link_to "CSV", posts_path(format: "csv") %> |
-  <%= link_to "Excel", posts_path(format: "xls") %>
+  <b>Download:</b>
+  |<%= link_to "CSV", posts_path(format: "csv") %> |
+  |<%= link_to "Excel", posts_path(format: "xls") %>|
 </p>
-  <h2>Import Blog Posts</h2>
+  <h5>Import Blog Posts</h5>
 <%= form_tag import_posts_path, multipart: true do %>
   <%= file_field_tag :file %>
   <%= submit_tag "Import" %>
 <% end %>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
-        <td><%= post.description %></td>
-        <td><%= post.user.email %></td>
-        <td><%= link_to 'Show', post %></td>
+        <td>| <%= post.title %> |</td>
+        <td> |<%= post.description %> |</td>
+        <td> |<%= post.user.email %> |</td>
+        <td>|<%= link_to 'Show', post %>|</td>
         <% if is_my_post?(post) %>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>|<%= link_to 'Edit', edit_post_path(post) %>|</td>
+        <td>|<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>|</td>
         <% end %>
       </tr>
     <% end %>

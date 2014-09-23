@@ -22,14 +22,14 @@
 <div><%= link_to image_tag(@post.avatar2.url(:medium)), @post.avatar2.url  %></div><br>
 
 <strong>Comments:</strong>
-  <% @post.comments.each do |comment| %>
-    <%= comment.content %> (<%= comment.title %>)
+   <% @post.comments.each do |comment| %> 
+   | <%= comment.content %> | (<%= comment.title %>) |
     <hr>
 	<% if is_my_post?(@post) %>
 
-	<%= link_to 'Edit', edit_post_path(@post) %> |
+	| <%= link_to 'Edit', edit_post_path(@post) %> |
 	<% end %>
-	<%= link_to 'Back', posts_path %>
+	| <%= link_to 'Back', posts_path %> |
 
   <% end %>
   <hr>
